@@ -5,7 +5,17 @@ import Completed from "./components/Completed";
 
 function App() {
 
-  const [Tab, setTab] = useState("All");
+  const [Tab, setTab] = useState("All")
+  const [NewTaskName, setNewTaskName] = useState("")
+  const [ToDoList, setToDoList] = useState([
+    {name: "Shop some coffee", done: false},
+    {name: "Shop some coffee", done: true}
+  ])
+  const addNewTask = (e) => {
+    e.preventDefault()
+    setToDoList([...ToDoList, {name: NewTaskName, done: false}])
+    console.log(ToDoList)
+  }
 
   return (
     <div className="App">
@@ -15,10 +25,14 @@ function App() {
         <button onClick={() => setTab("Active")}>Active</button>
         <button onClick={() => setTab("Completed")}>Completed</button>
       </div>
+      <form>
+        <input className="input-new-task" onChange={(e) => setNewTaskName(e.target.value)} placeholder="Add a new task"></input>
+        <button onClick={addNewTask}>Add</button>
+      </form>
       <div>
-        {Tab === "All" ? <All/> : null}
+        {Tab === "All" ? <All ToDoList={ToDoList}/> : null}
         {Tab === "Active" ? <Active/> : null}
-        {Tab === "Completed" ? <Completed/> : null}
+        {Tab === "Completed" ? <Completed ToDoList={ToDoList}/> : null}
       </div>
     </div>
   );

@@ -1,8 +1,20 @@
 import React from 'react'
 
-function Completed() {
+function Completed({ToDoList}) {
   return (
-    <div>Completed</div>
+    <div id="Completed-tab">
+        {
+            ToDoList.map(({name, done}, index) =>
+                <div key={index}>
+                    <input 
+                    key={index}
+                    type="checkbox"
+                    value={name}
+                    />{name}
+                </div>
+            )
+        }
+    </div>
   )
 }
 

@@ -2,7 +2,9 @@ import React from 'react'
 
 function Active() {
   return (
-    <div>Active</div>
+    <div id='Active-tab'>
+        Active
+    </div>
   )
 }
 
