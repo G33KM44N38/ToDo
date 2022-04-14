@@ -8,12 +8,12 @@ function App() {
   const [Tab, setTab] = useState("All")
   const [NewTaskName, setNewTaskName] = useState("")
   const [ToDoList, setToDoList] = useState([
-    {name: "Shop some coffee", done: false },
-    {name: "Shop some coffee", done: true }
+    {id: 1, name: "Shop some coffee", done: false },
+    {id: 2, name: "Buy milk", done: true }
   ])
   const addNewTask = (e) => {
     e.preventDefault()
-    setToDoList([...ToDoList, {name: NewTaskName, done: false}])
+    setToDoList([...ToDoList, {id: ToDoList.length + 1, name: NewTaskName, done: false}])
     console.log(ToDoList)
   }
 
@@ -25,13 +25,13 @@ function App() {
         <button onClick={() => setTab("Active")}>Active</button>
         <button onClick={() => setTab("Completed")}>Completed</button>
       </div>
-      <form>
+      <form id="input-type-form">
         <input className="input-new-task" onChange={(e) => setNewTaskName(e.target.value)} placeholder="Add a new task"></input>
         <button onClick={addNewTask}>Add</button>
       </form>
       <div>
         {Tab === "All" ? <All ToDoList={ToDoList} setNewTaskName={setNewTaskName}/> : null}
-        {Tab === "Active" ? <Active/> : null}
+        {Tab === "Active" ? <Active ToDoList={ToDoList} setNewTaskName={setNewTaskName}/> : null}
         {Tab === "Completed" ? <Completed ToDoList={ToDoList} setNewTaskName={setNewTaskName}/> : null}
       </div>
     </div>
