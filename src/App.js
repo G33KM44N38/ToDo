@@ -16,14 +16,14 @@ function App() {
     {id: uuidv4(), name: "Buy milk", done: true }
   ])
   const addNewTask = (e) => {
+
     e.preventDefault()
-    console.log(NewTaskName);
+
     if (NewTaskName !== '')
     {
       setToDoList([...ToDoList, {id: uuidv4(), name: NewTaskName, done: false}])
       setNewTaskName("")
     }
-    console.log(NewTaskName);
   }
 
   return (
