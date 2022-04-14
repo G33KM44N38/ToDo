@@ -1,6 +1,7 @@
 import React from 'react'
 import toChecked from '../function/toChecked';
 import Delete from '../function/Delete';
+import Update from '../function/Update';
 
 function All({ToDoList, setToDoList}) {
 
@@ -18,6 +19,7 @@ function All({ToDoList, setToDoList}) {
                     checked={done}
                     />{name}
                     <Delete id={id} ToDoList={ToDoList} setToDoList={setToDoList}/>
+                    <Update id={id} ToDoList={ToDoList} setToDoList={setToDoList}/>
                 </div>
             )
         }
