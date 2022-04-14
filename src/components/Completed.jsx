@@ -3,9 +3,14 @@ import React, { useEffect, useState } from 'react'
 function Completed({ToDoList, setNewTaskName}) {
   const [filteredTaskDone, setfilteredTaskDone] = useState([]);
 
-  const toChecked = (index) => {
+  const toChecked = (id) => {
+
+    const index = ToDoList.findIndex(element => element.id === id)
+
     ToDoList[index].done = !ToDoList[index].done
-    setNewTaskName([...ToDoList]);
+
+    setNewTaskName([...ToDoList])
+
   }
 
   useEffect(() => {
