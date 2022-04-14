@@ -1,10 +1,10 @@
 import React from 'react'
 
-function All({ToDoList, setNewTaskName}) {
+function All({ToDoList, setToDoList}) {
 
     const toChecked = (index) => {
         ToDoList[index].done = !ToDoList[index].done
-        setNewTaskName([...ToDoList]);
+        setToDoList([...ToDoList]);
     }
 
   return (

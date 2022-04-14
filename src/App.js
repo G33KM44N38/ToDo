@@ -17,7 +17,13 @@ function App() {
   ])
   const addNewTask = (e) => {
     e.preventDefault()
-    setToDoList([...ToDoList, {id: uuidv4(), name: NewTaskName, done: false}])
+    console.log(NewTaskName);
+    if (NewTaskName !== '')
+    {
+      setToDoList([...ToDoList, {id: uuidv4(), name: NewTaskName, done: false}])
+      setNewTaskName("")
+    }
+    console.log(NewTaskName);
   }
 
   return (
@@ -28,14 +34,14 @@ function App() {
         <button onClick={() => setTab("Active")}>Active</button>
         <button onClick={() => setTab("Completed")}>Completed</button>
       </div>
-      <form id="input-type-form">
-        <input className="input-new-task" onChange={(e) => setNewTaskName(e.target.value)} placeholder="Add a new task"></input>
-        <button onClick={addNewTask}>Add</button>
+      <form id="input-type-div">
+        <input className="input-new-task" onChange={(e) => setNewTaskName(e.target.value)} placeholder="Add a new task"  value={NewTaskName}></input>
+        <button type="submit" onClick={addNewTask}>Add</button>
       </form>
       <div>
-        {Tab === "All" ? <All ToDoList={ToDoList} setNewTaskName={setNewTaskName}/> : null}
-        {Tab === "Active" ? <Active ToDoList={ToDoList} setNewTaskName={setNewTaskName}/> : null}
-        {Tab === "Completed" ? <Completed ToDoList={ToDoList} setNewTaskName={setNewTaskName}/> : null}
+        {Tab === "All" ? <All ToDoList={ToDoList} setToDoList={setToDoList}/> : null}
+        {Tab === "Active" ? <Active ToDoList={ToDoList} setToDoList={setToDoList}/> : null}
+        {Tab === "Completed" ? <Completed ToDoList={ToDoList} setToDoList={setToDoList}/> : null}
       </div>
     </div>
   );

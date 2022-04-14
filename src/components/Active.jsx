@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 
-function Active({ToDoList, setNewTaskName}) {
+function Active({ToDoList, setToDoList}) {
 
   const [filteredTaskDone, setfilteredTaskDone] = useState([])
 
@@ -11,7 +11,7 @@ function Active({ToDoList, setNewTaskName}) {
 
     ToDoList[index].done = !ToDoList[index].done
 
-    setNewTaskName([...ToDoList])
+    setToDoList([...ToDoList])
 
   }
 

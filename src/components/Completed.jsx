@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-function Completed({ToDoList, setNewTaskName}) {
+function Completed({ToDoList, setToDoList}) {
   const [filteredTaskDone, setfilteredTaskDone] = useState([]);
 
   const toChecked = (id) => {
@@ -9,7 +9,7 @@ function Completed({ToDoList, setNewTaskName}) {
 
     ToDoList[index].done = !ToDoList[index].done
 
-    setNewTaskName([...ToDoList])
+    setToDoList([...ToDoList])
 
   }
 
