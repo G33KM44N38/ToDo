@@ -15,14 +15,14 @@ function Completed({ToDoList, setNewTaskName}) {
   return (
     <div id="Completed-tab">
         {
-            filteredTaskDone.map(({name, done}, index) =>
+            filteredTaskDone.map(({name, done, id}, index) =>
                 <div key={index}>
                     <input 
                     key={index}
                     type="checkbox"
                     value={name}
                     checked={done}
-                    onChange={() => toChecked(index)}
+                    onChange={() => toChecked(id)}
                     />{name}
                 </div>
             )
