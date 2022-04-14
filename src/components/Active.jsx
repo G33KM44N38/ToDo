@@ -1,19 +1,9 @@
 import React, { useEffect, useState } from 'react'
-
+import toChecked from '../function/toChecked'
 
 function Active({ToDoList, setToDoList}) {
 
   const [filteredTaskDone, setfilteredTaskDone] = useState([])
-
-  const toChecked = (id) => {
-
-    const index = ToDoList.findIndex(element => element.id === id)
-
-    ToDoList[index].done = !ToDoList[index].done
-
-    setToDoList([...ToDoList])
-
-  }
 
   useEffect(() => {
     setfilteredTaskDone(ToDoList.filter(task => task.done === false))
@@ -29,7 +19,7 @@ function Active({ToDoList, setToDoList}) {
                     type="checkbox"
                     value={name}
                     checked={done}
-                    onChange={() => toChecked(id)}
+                    onChange={() => toChecked(id, setToDoList, ToDoList)}
                     />{name}
                 </div>
             )
