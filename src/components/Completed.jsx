@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import toChecked from '../function/toChecked';
 import Delete from '../function/Delete';
+import { ImBin } from 'react-icons/im';
 
 function Completed({ToDoList, setToDoList}) {
   const [filteredTaskDone, setfilteredTaskDone] = useState([]);
@@ -25,6 +26,7 @@ function Completed({ToDoList, setToDoList}) {
                 </div>
             )
         }
+        <button><ImBin/>Delete All</button>
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './App.css';
 import Active from "./components/Active";
 import All from "./components/All";
 import Completed from "./components/Completed";
@@ -26,20 +27,22 @@ function App() {
 
   return (
     <div className="App">
-      <h1>#todo</h1>
+      <h1 id="todo-title">#todo</h1>
       <div>
-        <button onClick={() => setTab("All")}>All</button>
-        <button onClick={() => setTab("Active")}>Active</button>
-        <button onClick={() => setTab("Completed")}>Completed</button>
-      </div>
-      <form id="input-type-div">
-        <input className="input-new-task" onChange={(e) => setNewTaskName(e.target.value)} placeholder="Add a new task"  value={NewTaskName}></input>
-        <button type="submit" onClick={addNewTask}>Add</button>
-      </form>
-      <div>
-        {Tab === "All" ? <All ToDoList={ToDoList} setToDoList={setToDoList}/> : null}
-        {Tab === "Active" ? <Active ToDoList={ToDoList} setToDoList={setToDoList}/> : null}
-        {Tab === "Completed" ? <Completed ToDoList={ToDoList} setToDoList={setToDoList}/> : null}
+        <div className="tab-buttons">
+          <button className="tab-button" onClick={() => setTab("All")}>All</button>
+          <button className="tab-button" onClick={() => setTab("Active")}>Active</button>
+          <button className="tab-button" onClick={() => setTab("Completed")}>Completed</button>
+        </div>
+        <form id="input-type-div">
+          <input className="input-new-task" onChange={(e) => setNewTaskName(e.target.value)} placeholder="Add a new task"  value={NewTaskName}></input>
+          <button className="add-button" type="submit" onClick={addNewTask}>Add</button>
+        </form>
+        <div className="tab-view">
+          {Tab === "All" ? <All ToDoList={ToDoList} setToDoList={setToDoList}/> : null}
+          {Tab === "Active" ? <Active ToDoList={ToDoList} setToDoList={setToDoList}/> : null}
+          {Tab === "Completed" ? <Completed ToDoList={ToDoList} setToDoList={setToDoList}/> : null}
+        </div>
       </div>
     </div>
   );
