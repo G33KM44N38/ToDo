@@ -5,10 +5,10 @@
   "private": true,
   "dependencies": {
     "gh-pages": "^0.1.0",
+    "nanoid": "^3.3.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-scripts": "^0.9.5",
-    "uuid": "^8.3.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
