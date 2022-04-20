@@ -7,7 +7,7 @@
 
 .tab-buttons{
     display: flex;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid gray;
     margin-bottom: 10px;
     width: 30rem;
     justify-content: space-around;
@@ -20,4 +20,27 @@
 button {
     border: none;
     background: none;
+}
+
+
+/* === input === */
+
+#input-type-div{
+    display: flex;
+    justify-content: space-between;
+    height: 3rem;
+}
+
+.input-new-task{
+    flex-grow: 2;
+    margin-right: 1rem;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.add-button{
+    background-color: rgb(42, 42, 255);
+    flex-grow: 1;
+    color: white;
+    border-radius: 10px;
 }

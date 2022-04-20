@@ -1,7 +1,8 @@
 import React from 'react'
-import toChecked from '../function/toChecked';
-import Delete from '../function/Delete';
-import Update from '../function/Update';
+import toChecked from '../../function/toChecked';
+import Delete from '../../function/Delete';
+import Update from '../../function/Update';
+import './All.css'
 
 function All({ToDoList, setToDoList}) {
 

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import toChecked from '../function/toChecked';
-import Delete from '../function/Delete';
+import toChecked from '../../function/toChecked';
+import Delete from '../../function/Delete';
 import { ImBin } from 'react-icons/im';
+import './Completed.css'
 
 function Completed({ToDoList, setToDoList}) {
   const [filteredTaskDone, setfilteredTaskDone] = useState([]);

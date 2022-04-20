@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import toChecked from '../function/toChecked'
-import Delete from '../function/Delete'
-import Update from '../function/Update'
+import toChecked from '../../function/toChecked'
+import Delete from '../../function/Delete'
+import Update from '../../function/Update'
 
 function Active({ToDoList, setToDoList}) {
 

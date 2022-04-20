@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import './App.css';
-import Active from "./components/Active";
-import All from "./components/All";
-import Completed from "./components/Completed";
+import Active from "./components/Active/Active"
+import All from "./components/All/All";
+import Completed from "./components/Completed/Completed";
 import uniqueid from "./function/getNewId";
 
 function App() {
