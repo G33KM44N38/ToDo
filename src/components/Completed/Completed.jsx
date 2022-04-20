@@ -12,23 +12,26 @@ function Completed({ToDoList, setToDoList}) {
   }, [filteredTaskDone])
   
   return (
-    <div id="Completed-tab">
-        {
-            filteredTaskDone.map(({name, done, id}, index) =>
-                <div key={index}>
-                  <input 
-                  key={index}
-                  type="checkbox"
-                  value={name}
-                  checked={done}
-                  onChange={() => toChecked(id, setToDoList, ToDoList)}
-                  />{name}
-                  <Delete id={id} ToDoList={ToDoList} setToDoList={setToDoList}/>
-                </div>
-            )
-        }
-        <button><ImBin/>Delete All</button>
+    <div>
+      <div id="Completed-tab">
+          {
+              filteredTaskDone.map(({name, done, id}, index) =>
+                  <div key={index}>
+                    <input 
+                    key={index}
+                    type="checkbox"
+                    value={name}
+                    checked={done}
+                    onChange={() => toChecked(id, setToDoList, ToDoList)}
+                    />{name}
+                    <Delete id={id} ToDoList={ToDoList} setToDoList={setToDoList}/>
+                  </div>
+              )
+          }
+          <button><ImBin/>Delete All</button>
+      </div>
     </div>
+
   )
 }
 

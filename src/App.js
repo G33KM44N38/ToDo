@@ -34,13 +34,9 @@ function App() {
           <button className="tab-button" onClick={() => setTab("Active")}>Active</button>
           <button className="tab-button" onClick={() => setTab("Completed")}>Completed</button>
         </div>
-        <form id="input-type-div">
-          <input className="input-new-task" onChange={(e) => setNewTaskName(e.target.value)} placeholder="Add a new task"  value={NewTaskName}></input>
-          <button className="add-button" type="submit" onClick={addNewTask}>Add</button>
-        </form>
         <div className="tab-view">
-          {Tab === "All" ? <All ToDoList={ToDoList} setToDoList={setToDoList}/> : null}
-          {Tab === "Active" ? <Active ToDoList={ToDoList} setToDoList={setToDoList}/> : null}
+          {Tab === "All" ? <All ToDoList={ToDoList} setToDoList={setToDoList} setNewTaskName={setNewTaskName} NewTaskName={NewTaskName} addNewTask={addNewTask}/> : null}
+          {Tab === "Active" ? <Active ToDoList={ToDoList} setToDoList={setToDoList} setNewTaskName={setNewTaskName} NewTaskName={NewTaskName} addNewTask={addNewTask}/> : null}
           {Tab === "Completed" ? <Completed ToDoList={ToDoList} setToDoList={setToDoList}/> : null}
         </div>
       </div>
