@@ -44,3 +44,15 @@ button {
     color: white;
     border-radius: 10px;
 }
+
+/* === list of task === */
+
+.checkbox{
+    margin-top: 1rem;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+}
+input[type=checkbox] {
+    transform: scale(2);
+    border: solid 1px gray;
+}

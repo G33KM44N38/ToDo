@@ -21,6 +21,7 @@ function Active({ToDoList, setToDoList, setNewTaskName, NewTaskName, addNewTask}
                   <div key={index}>
                       <input 
                       key={index}
+                      className='checkbox'
                       type="checkbox"
                       value={name}
                       checked={done}

@@ -16,6 +16,7 @@ function All({ToDoList, setToDoList, setNewTaskName, NewTaskName, addNewTask}) {
               ToDoList.map(({name, done, id}, index) =>
                   <div key={index}>
                       <input 
+                      className='checkbox'
                       key={index}
                       type="checkbox"
                       value={name}
