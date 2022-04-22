@@ -30,7 +30,7 @@ function Completed({ToDoList, setToDoList}) {
     <div id="Completed-tab">
         {
             filteredTaskDone.map(({name, done, id}, index) =>
-                <div key={index}>
+                <div className='task-line' key={index}>
                   <input 
                   className='checkbox'
                   key={index}
@@ -39,7 +39,9 @@ function Completed({ToDoList, setToDoList}) {
                   checked={done}
                   onChange={() => toChecked(id, setToDoList, ToDoList)}
                   />{name}
-                  <Delete id={id} ToDoList={ToDoList} setToDoList={setToDoList}/>
+                  <div className='control-tab'>
+                    <Delete id={id} ToDoList={ToDoList} setToDoList={setToDoList}/>
+                  </div>
                 </div>
             )
         }

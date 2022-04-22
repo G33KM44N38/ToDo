@@ -14,7 +14,7 @@ function All({ToDoList, setToDoList, setNewTaskName, NewTaskName, addNewTask}) {
       <div id='All-tab'>
           {
               ToDoList.map(({name, done, id}, index) =>
-                  <div key={index}>
+                  <div className='task-line' key={index}>
                       <input 
                       className='checkbox'
                       key={index}
@@ -23,8 +23,10 @@ function All({ToDoList, setToDoList, setNewTaskName, NewTaskName, addNewTask}) {
                       onChange={() => toChecked(id, setToDoList, ToDoList)}
                       checked={done}
                       />{name}
-                      <Delete id={id} ToDoList={ToDoList} setToDoList={setToDoList}/>
-                      <Update id={id} ToDoList={ToDoList} setToDoList={setToDoList}/>
+                      <div className='control-tab'>
+                        <Delete id={id} ToDoList={ToDoList} setToDoList={setToDoList}/>
+                        {/* <Update id={id} ToDoList={ToDoList} setToDoList={setToDoList}/> */}
+                      </div>
                   </div>
               )
           }

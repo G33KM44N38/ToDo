@@ -56,3 +56,29 @@ input[type=checkbox] {
     transform: scale(2);
     border: solid 1px gray;
 }
+
+/* === task === */
+
+.task-line{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.control-tab{
+    position: absolute;
+    right: 0;
+}
+
+.delete-button{
+    background-color: rgb(42, 42, 255);
+    color: white;
+    border-radius: 10px;
+}
+
+.update-button{
+    margin-left: 2px;
+    background-color: rgb(42, 42, 255);
+    color: white;
+    border-radius: 10px;
+}

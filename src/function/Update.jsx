@@ -7,7 +7,7 @@ function Update({id, ToDoList, setToDoList}) {
         setToDoList([...ToDoList])
     }
   return (
-    <button onClick={() => updateTask(id, setToDoList, ToDoList)}>update</button>
+    <button className='update-button' onClick={() => updateTask(id, setToDoList, ToDoList)}>update</button>
   )
 }
 
